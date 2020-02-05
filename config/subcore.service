@@ -1,0 +1,14 @@
+[Unit]
+Description=subcore deamon
+After=rc-local.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/root/subweb/config
+ExecStart=/root/subweb/config/subconverter 
+Restart=always
+LimitNOFILE=512000
+[Install]
+WantedBy=multi-user.target

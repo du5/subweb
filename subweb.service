@@ -1,0 +1,14 @@
+[Unit]
+Description=subweb deamon
+After=rc-local.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/root/subweb
+ExecStart=/usr/bin/python3.6 api.py
+Restart=always
+LimitNOFILE=512000
+[Install]
+WantedBy=multi-user.target
